@@ -2,7 +2,7 @@
 name: BamQC
 components: 
 - !piggene.serialisation.workflow.WorkflowReference
-   name: ReadAlignments
+   name: ReadBAM
    position: 
       left: 410
       top: 384

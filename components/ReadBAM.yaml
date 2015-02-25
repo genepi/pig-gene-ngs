@@ -1,8 +1,8 @@
 !piggene.serialisation.workflow.Workflow
-name: ReadAlignments
+name: ReadBAM
 components: 
 - !piggene.serialisation.workflow.WorkflowComponent
-   name: ReadAlignments
+   name: ReadBAM
    content: "$output = load $input using fi.aalto.seqpig.io.BamLoader('yes'); \n"
    scriptType: 
       name: Apache Pig Script

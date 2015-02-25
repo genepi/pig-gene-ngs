@@ -1,0 +1,25 @@
+!piggene.serialisation.workflow.Workflow
+name: ReadFastq
+components: 
+- !piggene.serialisation.workflow.WorkflowComponent
+   name: ReadFastq
+   content: $output = load $input using fi.aalto.seqpig.io.FastqLoader();
+   scriptType: 
+      name: Apache Pig Script
+description: component description
+parameter: 
+   inputParameter: 
+   - !piggene.serialisation.workflow.parameter.InputLinkParameter
+      connector: $input
+      description: Fastq Filename
+      position: {}
+      uid: 09884ecd_75a7_0b3a_e7ef_673e4b5c3ec3
+   outputParameter: 
+   - !piggene.serialisation.workflow.parameter.OutputLinkParameter
+      connector: $output
+      description: FastQ File
+      position: {}
+      uid: 5287a838_cb2a_a25f_b7ec_67db5d11246b
+parameterMapping: 
+   inputParameterMapping: {}
+   outputParameterMapping: {}
