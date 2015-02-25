@@ -1,0 +1,25 @@
+!piggene.serialisation.workflow.Workflow
+name: WriteCSV
+components: 
+- !piggene.serialisation.workflow.WorkflowComponent
+   name: WriteCSV
+   content: STORE $input into $output;
+   scriptType: 
+      name: Apache Pig Script
+description: component description
+parameter: 
+   inputParameter: 
+   - !piggene.serialisation.workflow.parameter.InputLinkParameter
+      connector: $input
+      description: CSV File
+      position: {}
+      uid: 18759b94_ee39_1b44_196a_c6a7499679e0
+   outputParameter: 
+   - !piggene.serialisation.workflow.parameter.OutputLinkParameter
+      connector: $output
+      description: Output
+      position: {}
+      uid: 82ec6cef_23f0_62c7_5271_b1129dd6f81a
+parameterMapping: 
+   inputParameterMapping: {}
+   outputParameterMapping: {}

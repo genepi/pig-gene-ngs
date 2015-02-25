@@ -1,0 +1,26 @@
+!piggene.serialisation.workflow.Workflow
+name: GenomeCoverage
+components: 
+- !piggene.serialisation.workflow.WorkflowComponent
+   name: GenomeCoverage
+   content: "R4_1 = GROUP $input BY start/200; \nR4 = FOREACH R4_1 GENERATE group, COUNT($R3); \nSTOR\
+      E R4 into $output_coverage;"
+   scriptType: 
+      name: Apache Pig Script
+description: component description
+parameter: 
+   inputParameter: 
+   - !piggene.serialisation.workflow.parameter.InputLinkParameter
+      connector: $input
+      description: Bam File
+      position: {}
+      uid: 600e92f1_7961_5e4e_ff89_e0e2f3c091e4
+   outputParameter: 
+   - !piggene.serialisation.workflow.parameter.OutputLinkParameter
+      connector: $output_coverage
+      description: Output Covertage (CSV)
+      position: {}
+      uid: e2ff955f_ff95_0643_69bf_95be51a24e76
+parameterMapping: 
+   inputParameterMapping: {}
+   outputParameterMapping: {}

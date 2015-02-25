@@ -1,0 +1,25 @@
+!piggene.serialisation.workflow.Workflow
+name: ReadAlignments
+components: 
+- !piggene.serialisation.workflow.WorkflowComponent
+   name: ReadAlignments
+   content: "$output = load $input using fi.aalto.seqpig.io.BamLoader('yes'); \n"
+   scriptType: 
+      name: Apache Pig Script
+description: component description
+parameter: 
+   inputParameter: 
+   - !piggene.serialisation.workflow.parameter.InputLinkParameter
+      connector: $input
+      description: Input BAM
+      position: {}
+      uid: 1f6caf69_219f_5197_df02_c9e217211bb8
+   outputParameter: 
+   - !piggene.serialisation.workflow.parameter.OutputLinkParameter
+      connector: $output
+      description: Output BAM
+      position: {}
+      uid: 28af505a_f9c2_a48d_7bd9_fb2861dce03a
+parameterMapping: 
+   inputParameterMapping: {}
+   outputParameterMapping: {}
