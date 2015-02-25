@@ -1,0 +1,27 @@
+!piggene.serialisation.workflow.Workflow
+name: QualityPerBase
+components: 
+- !piggene.serialisation.workflow.WorkflowComponent
+   name: QualityPerBase
+   content: "read_seq_qual = FOREACH $input GENERATE quality; \n avgbase_qual_counts = FOREACH (GROUP\
+      \ read_seq_qual ALL) GENERATE AvgBaseQualCounts($1.$0); \n formatted_avgbase_qual_counts = FORE\
+      ACH avgbase_qual_counts GENERATE FormatAvgBaseQualCounts($0);"
+   scriptType: 
+      name: Apache Pig Script
+description: component description
+parameter: 
+   inputParameter: 
+   - !piggene.serialisation.workflow.parameter.InputLinkParameter
+      connector: $input
+      description: Fastq File
+      position: {}
+      uid: 2a4f45c9_264f_ce3a_78bb_5d27a6899954
+   outputParameter: 
+   - !piggene.serialisation.workflow.parameter.OutputLinkParameter
+      connector: formatted_avgbase_qual_counts
+      description: CSV File
+      position: {}
+      uid: 3a925800_ddc1_6e7e_9d75_63525a291af6
+parameterMapping: 
+   inputParameterMapping: {}
+   outputParameterMapping: {}

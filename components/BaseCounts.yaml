@@ -1,0 +1,29 @@
+!piggene.serialisation.workflow.Workflow
+name: BaseCounts
+components: 
+- !piggene.serialisation.workflow.WorkflowComponent
+   name: BaseCounts
+   content: "read_seqs = FOREACH $input GENERATE sequence; \n base_counts = FOREACH (GROUP read_seqs \
+      ALL) GENERATE BaseCounts($1); \n $formatted_base_counts = FOREACH base_counts GENERATE FormatBa\
+      seCounts($0);"
+   scriptType: 
+      name: Apache Pig Script
+description: "The BaseCounts UDF relies on the aforementioned counter class to provide a histogram of\
+   \ the occurences of each of the five base identifiers (\u201cA\u201d, \u201cC\u201d, \u201cG\u201d\
+   , \u201cT\u201d and \u201cN\u201d) over the given set of reads."
+parameter: 
+   inputParameter: 
+   - !piggene.serialisation.workflow.parameter.InputLinkParameter
+      connector: $input
+      description: Fastq File
+      position: {}
+      uid: 2db95a79_bc0c_402c_a14b_45151ed949d0
+   outputParameter: 
+   - !piggene.serialisation.workflow.parameter.OutputLinkParameter
+      connector: $formatted_base_counts
+      description: CSV File
+      position: {}
+      uid: 0c326d48_858c_7c2b_7172_5b48bf6e3693
+parameterMapping: 
+   inputParameterMapping: {}
+   outputParameterMapping: {}
