@@ -3,8 +3,8 @@ name: GenomeCoverage
 components: 
 - !piggene.serialisation.workflow.WorkflowComponent
    name: GenomeCoverage
-   content: "R4_1 = GROUP $input BY start/200; \nR4 = FOREACH R4_1 GENERATE group, COUNT($R3); \nSTOR\
-      E R4 into $output_coverage;"
+   content: "R4_1 = GROUP $input BY start/200; \nR4 = FOREACH R4_1 GENERATE group, COUNT($input); \nS\
+      TORE R4 into $output_coverage;"
    scriptType: 
       name: Apache Pig Script
 description: component description
