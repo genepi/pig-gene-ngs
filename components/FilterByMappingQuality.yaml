@@ -1,0 +1,30 @@
+!piggene.serialisation.workflow.Workflow
+name: FilterByMappingQuality
+components: 
+- !piggene.serialisation.workflow.WorkflowComponent
+   name: FilterByMappingQuality
+   content: $output = FILTER $input BY mapqual > $min_quality;
+   scriptType: 
+      name: Apache Pig Script
+description: component description
+parameter: 
+   inputParameter: 
+   - !piggene.serialisation.workflow.parameter.InputLinkParameter
+      connector: $input
+      description: BAM File
+      position: {}
+      uid: 88076d87_90a8_ea6c_8d95_241420ca9071
+   - !piggene.serialisation.workflow.parameter.InputLinkParameter
+      connector: $min_quality
+      description: 'Min. Mapping Quality (TODO: Text)'
+      position: {}
+      uid: 9a04e2b3_80a8_fce5_8299_09ce0ed87427
+   outputParameter: 
+   - !piggene.serialisation.workflow.parameter.OutputLinkParameter
+      connector: $outpu
+      description: BAM File
+      position: {}
+      uid: ac429987_9725_29e4_b80c_c51f3ab06158
+parameterMapping: 
+   inputParameterMapping: {}
+   outputParameterMapping: {}

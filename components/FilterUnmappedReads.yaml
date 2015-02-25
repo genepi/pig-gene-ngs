@@ -1,0 +1,25 @@
+!piggene.serialisation.workflow.Workflow
+name: FilterUnmappedReads
+components: 
+- !piggene.serialisation.workflow.WorkflowComponent
+   name: FilterUnmappedReads
+   content: $output = FILTER $input BY not ReadUnmapped(flags) and not IsDuplicate(flags);
+   scriptType: 
+      name: Apache Pig Script
+description: component description
+parameter: 
+   inputParameter: 
+   - !piggene.serialisation.workflow.parameter.InputLinkParameter
+      connector: $input
+      description: BAM File
+      position: {}
+      uid: b470a6ed_8793_d66a_5602_efa34a8f72ce
+   outputParameter: 
+   - !piggene.serialisation.workflow.parameter.OutputLinkParameter
+      connector: $output
+      description: BAM File
+      position: {}
+      uid: 012a7dac_2bb4_8c4f_7b87_434b4b5618e9
+parameterMapping: 
+   inputParameterMapping: {}
+   outputParameterMapping: {}
