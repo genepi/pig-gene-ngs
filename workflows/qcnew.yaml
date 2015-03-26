@@ -1,0 +1,65 @@
+!piggene.serialisation.workflow.Workflow
+name: qcnew
+components: 
+- !piggene.serialisation.workflow.WorkflowReference
+   name: ReadBAM
+   position: 
+      left: 332
+      top: 358
+   uid: 0ac2f24d_f45b_fa4f_d67a_a3155e5b40d0
+- !piggene.serialisation.workflow.WorkflowReference
+   name: GenomeCoverage
+   position: 
+      left: 574
+      top: 295
+   uid: 3948f14f_c697_8df6_302f_2205822e1422
+- !piggene.serialisation.workflow.WorkflowReference
+   name: plot
+   position: 
+      left: 836
+      top: 296
+   uid: 22dd7523_a509_c6b6_1121_22b9d285bdf9
+- !piggene.serialisation.workflow.WorkflowReference
+   name: QualityPerBase
+   position: 
+      left: 583
+      top: 534
+   uid: f538a10f_9160_06af_f9bf_88a2c2e72e37
+- !piggene.serialisation.workflow.WorkflowReference
+   name: plot
+   position: 
+      left: 874
+      top: 547
+   uid: 302931a2_d4e1_9584_1dae_af23bc49d9b2
+description: workflow description
+parameter: 
+   inputParameter: 
+   - !piggene.serialisation.workflow.parameter.InputLinkParameter
+      connector: connector_ac2b0eb7_63fd_6439_3dde_33ae1eff4ae7
+      description: bamfile
+      position: 
+         left: 61
+         top: 492
+      uid: 38ea8679_8c27_687b_fba5_564e439880ee
+   outputParameter: []
+parameterMapping: 
+   inputParameterMapping: 
+      3948f14f_c697_8df6_302f_2205822e1422: 
+         $input: connector_88dfc5e6_be23_b596_e66c_4a2877ef50d7
+      0ac2f24d_f45b_fa4f_d67a_a3155e5b40d0: 
+         $input: connector_ac2b0eb7_63fd_6439_3dde_33ae1eff4ae7
+      302931a2_d4e1_9584_1dae_af23bc49d9b2: 
+         $input: connector_9eefcccd_b60e_cae2_099e_ca39a9a173d3
+      f538a10f_9160_06af_f9bf_88a2c2e72e37: 
+         $input: connector_88dfc5e6_be23_b596_e66c_4a2877ef50d7
+      22dd7523_a509_c6b6_1121_22b9d285bdf9: 
+         $input: connector_face4204_4b7e_813e_d2ac_07ab9c389e0b
+   outputParameterMapping: 
+      3948f14f_c697_8df6_302f_2205822e1422: 
+         $output_coverage: connector_face4204_4b7e_813e_d2ac_07ab9c389e0b
+      0ac2f24d_f45b_fa4f_d67a_a3155e5b40d0: 
+         $output: connector_88dfc5e6_be23_b596_e66c_4a2877ef50d7
+      302931a2_d4e1_9584_1dae_af23bc49d9b2: {}
+      f538a10f_9160_06af_f9bf_88a2c2e72e37: 
+         formatted_avgbase_qual_counts: connector_9eefcccd_b60e_cae2_099e_ca39a9a173d3
+      22dd7523_a509_c6b6_1121_22b9d285bdf9: {}
