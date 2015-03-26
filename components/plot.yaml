@@ -1,0 +1,27 @@
+!piggene.serialisation.workflow.Workflow
+name: plot
+components: 
+- !piggene.serialisation.workflow.WorkflowComponent
+   name: plot
+   content: |-
+      ```{r echo=FALSE}
+      suppressPackageStartupMessages(library(ggplot2))
+      data = read.table("$input", header = FALSE, sep="\t")
+      p <- ggplot(data, aes(x=V1, y=V2)) + xlab("position") + ylab("coverage") + ggtitle("Coverage");
+      p + geom_line()
+      ```
+   scriptType: 
+      id: 1
+      name: R Markdown Script
+description: component description
+parameter: 
+   inputParameter: 
+   - !piggene.serialisation.workflow.parameter.InputLinkParameter
+      connector: $input
+      description: input file
+      position: {}
+      uid: 72b696c4_274b_7dee_d067_dbaa92fbffc3
+   outputParameter: []
+parameterMapping: 
+   inputParameterMapping: {}
+   outputParameterMapping: {}
