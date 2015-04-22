@@ -3,9 +3,7 @@ name: QualityPerBase
 components: 
 - !piggene.serialisation.workflow.WorkflowComponent
    name: QualityPerBase
-   content: "read_seq_qual = FOREACH $input GENERATE quality; \n avgbase_qual_counts = FOREACH (GROUP\
-      \read_seq_qual ALL) GENERATE AvgBaseQualCounts($1.$0); \n$formatted_avgbase_qual_counts = FORE\
-      ACH avgbase_qual_counts GENERATE FormatAvgBaseQualCounts($0);"
+   content: "read_seq_qual = FOREACH $input GENERATE quality; \navgbase_qual_counts = FOREACH (GROUP read_seq_qual ALL) GENERATE AvgBaseQualCounts($1.$0); \n$formatted_avgbase_qual_counts = FOREACH avgbase_qual_counts GENERATE FormatAvgBaseQualCounts($0);"
    scriptType: 
       name: Apache Pig Script
 description: component description
