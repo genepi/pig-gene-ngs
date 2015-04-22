@@ -3,7 +3,7 @@ name: ReadFastq
 components: 
 - !piggene.serialisation.workflow.WorkflowComponent
    name: ReadFastq
-   content: $output = load $input using fi.aalto.seqpig.io.FastqLoader();
+   content: $output = LOAD $input using fi.aalto.seqpig.io.FastqLoader();
    scriptType: 
       name: Apache Pig Script
 description: component description

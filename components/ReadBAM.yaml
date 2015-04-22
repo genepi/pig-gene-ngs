@@ -3,7 +3,7 @@ name: ReadBAM
 components: 
 - !piggene.serialisation.workflow.WorkflowComponent
    name: ReadBAM
-   content: "$output = load $input using fi.aalto.seqpig.io.BamLoader('yes'); \n"
+   content: $output = LOAD $input using fi.aalto.seqpig.io.BamLoader('yes');
    scriptType: 
       name: Apache Pig Script
 description: component description

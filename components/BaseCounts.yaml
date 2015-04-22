@@ -3,9 +3,9 @@ name: BaseCounts
 components: 
 - !piggene.serialisation.workflow.WorkflowComponent
    name: BaseCounts
-   content: "read_seqs = FOREACH $input GENERATE sequence; \n base_counts = FOREACH (GROUP read_seqs \
-      ALL) GENERATE BaseCounts($1); \n $formatted_base_counts = FOREACH base_counts GENERATE FormatBa\
-      seCounts($0);"
+   content: "read_seqs = FOREACH $input GENERATE sequence; \nbase_counts = FOREACH (GROUP read_seqs A\
+      LL) GENERATE BaseCounts($1); \n$formatted_base_counts = FOREACH base_counts GENERATE FormatBase\
+      Counts($0);"
    scriptType: 
       name: Apache Pig Script
 description: "The BaseCounts UDF relies on the aforementioned counter class to provide a histogram of\
