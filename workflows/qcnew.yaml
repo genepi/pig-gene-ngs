@@ -16,8 +16,8 @@ components:
 - !piggene.serialisation.workflow.WorkflowReference
    name: plot
    position: 
-      left: 836
-      top: 296
+      left: 1061
+      top: 294
    uid: 22dd7523_a509_c6b6_1121_22b9d285bdf9
 - !piggene.serialisation.workflow.WorkflowReference
    name: QualityPerBase
@@ -28,9 +28,21 @@ components:
 - !piggene.serialisation.workflow.WorkflowReference
    name: plot
    position: 
-      left: 874
-      top: 547
+      left: 1068
+      top: 536
    uid: 302931a2_d4e1_9584_1dae_af23bc49d9b2
+- !piggene.serialisation.workflow.WorkflowReference
+   name: WriteCSV
+   position: 
+      left: 815
+      top: 291
+   uid: 187337e7_28bd_5f84_35f0_8cadd85538d6
+- !piggene.serialisation.workflow.WorkflowReference
+   name: WriteCSV
+   position: 
+      left: 824
+      top: 522
+   uid: 19010780_3725_6327_d6c7_9f3ac2ad26b8
 description: workflow description
 parameter: 
    inputParameter: 
@@ -44,22 +56,31 @@ parameter:
    outputParameter: []
 parameterMapping: 
    inputParameterMapping: 
-      3948f14f_c697_8df6_302f_2205822e1422: 
-         $input: connector_88dfc5e6_be23_b596_e66c_4a2877ef50d7
       0ac2f24d_f45b_fa4f_d67a_a3155e5b40d0: 
          $input: connector_ac2b0eb7_63fd_6439_3dde_33ae1eff4ae7
       302931a2_d4e1_9584_1dae_af23bc49d9b2: 
-         $input: connector_9eefcccd_b60e_cae2_099e_ca39a9a173d3
+         $input: connector_e9a56282_bcac_b82c_5a2f_819dce1ae149
+      22dd7523_a509_c6b6_1121_22b9d285bdf9: 
+         $input: connector_415cff21_790c_5498_5d23_c243b8578d33
+      19010780_3725_6327_d6c7_9f3ac2ad26b8: 
+         $input: connector_2f6cbb4a_1df7_8731_772e_6cbfd202569a
+      187337e7_28bd_5f84_35f0_8cadd85538d6: 
+         $input: connector_face4204_4b7e_813e_d2ac_07ab9c389e0b
       f538a10f_9160_06af_f9bf_88a2c2e72e37: 
          $input: connector_88dfc5e6_be23_b596_e66c_4a2877ef50d7
-      22dd7523_a509_c6b6_1121_22b9d285bdf9: 
-         $input: connector_face4204_4b7e_813e_d2ac_07ab9c389e0b
-   outputParameterMapping: 
       3948f14f_c697_8df6_302f_2205822e1422: 
-         $output_coverage: connector_face4204_4b7e_813e_d2ac_07ab9c389e0b
+         $input: connector_88dfc5e6_be23_b596_e66c_4a2877ef50d7
+   outputParameterMapping: 
       0ac2f24d_f45b_fa4f_d67a_a3155e5b40d0: 
          $output: connector_88dfc5e6_be23_b596_e66c_4a2877ef50d7
       302931a2_d4e1_9584_1dae_af23bc49d9b2: {}
-      f538a10f_9160_06af_f9bf_88a2c2e72e37: 
-         formatted_avgbase_qual_counts: connector_9eefcccd_b60e_cae2_099e_ca39a9a173d3
       22dd7523_a509_c6b6_1121_22b9d285bdf9: {}
+      19010780_3725_6327_d6c7_9f3ac2ad26b8: 
+         $output: connector_e9a56282_bcac_b82c_5a2f_819dce1ae149
+      187337e7_28bd_5f84_35f0_8cadd85538d6: 
+         $output: connector_415cff21_790c_5498_5d23_c243b8578d33
+      f538a10f_9160_06af_f9bf_88a2c2e72e37: 
+         $formatted_avgbase_qual_counts: connector_2f6cbb4a_1df7_8731_772e_6cbfd202569a
+         formatted_avgbase_qual_counts: connector_9eefcccd_b60e_cae2_099e_ca39a9a173d3
+      3948f14f_c697_8df6_302f_2205822e1422: 
+         $output_coverage: connector_face4204_4b7e_813e_d2ac_07ab9c389e0b
